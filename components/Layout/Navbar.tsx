@@ -3,9 +3,10 @@ import { Icons } from '../Icons'
 import { NavItems } from './NavItems'
 import { MaxWidthWraper } from './MaxWidthWraper'
 import { buttonVariants } from '../ui/button'
+import { Cart } from '../Cart/Cart'
 
 export const Navbar = () => {
-  const user = null
+  const user = !null
 
   return (
     <div className="sticky inset-x-0 top-0 z-50 h-16 bg-white">
@@ -21,13 +22,17 @@ export const Navbar = () => {
                 </Link>
               </div>
 
-              <div className="lg-ml-8 z-50 hidden lg:block lg:self-stretch">
+              <div className="z-50 hidden lg:ml-8 lg:block lg:self-stretch">
                 <NavItems />
               </div>
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  {user ? null : (
+                  {user ? (
+                    <div className="ml-4 flow-root lg:ml-6">
+                      <Cart />
+                    </div>
+                  ) : (
                     <Link
                       href="/signin"
                       className={buttonVariants({ variant: 'default' })}
@@ -35,11 +40,6 @@ export const Navbar = () => {
                       Signin
                     </Link>
                   )}
-                  {user ? (
-                    <div className="ml-4 flow-root lg:ml-6">
-                      <Cart />
-                    </div>
-                  ) : null}
                 </div>
               </div>
             </div>
