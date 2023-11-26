@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/Layout/Navbar'
+import TRPCTanstackProvider from './providers/TanstackProvider'
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -28,8 +29,10 @@ export default function RootLayout({
         )}
       >
         <main className="relative flex min-h-screen flex-col">
-          <Navbar />
-          <div className="flex-1 flex-grow">{children}</div>
+          <TRPCTanstackProvider>
+            <Navbar />
+            <div className="flex-1 flex-grow">{children}</div>
+          </TRPCTanstackProvider>
         </main>
       </body>
     </html>
