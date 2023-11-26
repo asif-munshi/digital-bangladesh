@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/Layout/Navbar'
-import TRPCTanstackProvider from './providers/TanstackProvider'
+import TRPCTanstackProvider from './providers/TRPCTanstackProvider'
 
 export const fontSans = FontSans({
   subsets: ['latin'],
