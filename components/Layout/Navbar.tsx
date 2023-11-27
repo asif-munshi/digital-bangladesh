@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Icons } from '../Icons'
 import { NavItems } from './NavItems'
+import UserAccountNav from './UserAccountNav'
 import { MaxWidthWraper } from './MaxWidthWraper'
 import { buttonVariants } from '../ui/button'
 import { Cart } from '../Cart/Cart'
@@ -32,7 +33,12 @@ export const Navbar = async () => {
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {user ? (
-                    <div className="ml-4 flow-root lg:ml-6">
+                    <div className="ml-4 flex flex-row gap-4 lg:ml-6">
+                      <UserAccountNav user={user} />
+                      <span
+                        className="h-6 w-px bg-gray-200"
+                        aria-hidden={true}
+                      ></span>
                       <Cart />
                     </div>
                   ) : (
