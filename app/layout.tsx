@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
+import { Toaster } from 'sonner'
 import { cn } from '@/lib/utils'
 import { Navbar } from '@/components/Layout/Navbar'
 import TRPCTanstackProvider from './providers/TRPCTanstackProvider'
@@ -34,6 +35,7 @@ export default function RootLayout({
             <div className="flex-1 flex-grow">{children}</div>
           </TRPCTanstackProvider>
         </main>
+        <Toaster position="top-center" richColors />
       </body>
     </html>
   )
