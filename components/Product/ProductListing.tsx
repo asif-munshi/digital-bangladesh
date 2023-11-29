@@ -6,6 +6,8 @@ import { Product } from '@/payload-types'
 import { PRODUCT_CATEGORIES } from '@/config'
 import { cn, formatPrice } from '@/lib/utils'
 import ProductPlaceholder from './ProductPlaceholder'
+import ImageSlider from './ImageSlider'
+import { boolean } from 'zod'
 
 interface ProductListingProps {
   product: Product | null
@@ -29,6 +31,10 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
     ({ value }) => value === product.category
   )?.label
 
+  const validUrls = product.images
+    .map(({ image }) => (typeof image === 'string' ? image : image.url))
+    .filter(Boolean) as string[]
+
   if (product || isVisible) {
     return (
       <Link
@@ -38,6 +44,8 @@ const ProductListing = ({ product, index }: ProductListingProps) => {
         })}
       >
         <div className="flex w-full flex-col">
+          <ImageSlider urls={validUrls} />
+
           <h3 className="mt-4 text-sm font-medium text-gray-700">
             {product.name}
           </h3>
