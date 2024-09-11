@@ -32,7 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Authors
 
-- [@Asif Munshi](https://www.github.com/asif-munshi)
+<a href="https://www.github.com/asif-munshi" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/75932258?v=4" alt="asif-munshi" width="40" height="40" style="border-radius:50%"/> </a>
 
 ## Notes
 
